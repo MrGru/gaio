@@ -8,6 +8,7 @@
 		"gapp:ios": "bun run --filter gapp ios",
 		"gapp:android": "bun run --filter gapp android",
 		"gapp:web": "bun run --filter gapp web",
-		"check": "bun run -r check"
+		"check": "bun run -r check",
+		"ui:start": "bun run --filter ui start"
 	}
 }
