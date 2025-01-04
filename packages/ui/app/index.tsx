@@ -1,7 +1,7 @@
 import { Text } from "react-native";
 
 const Home = () => {
-	return <Text style={{ color: "white" }}>Home</Text>;
+	return <Text className="text-blue-600">Home</Text>;
 };
 
 export default Home;

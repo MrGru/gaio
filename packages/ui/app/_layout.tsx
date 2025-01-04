@@ -73,7 +73,10 @@ export default function RootLayout() {
 	return (
 		<ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
 			<StatusBar style={isDarkColorScheme ? "light" : "dark"} />
-			<Stack />
+			<Stack initialRouteName="index">
+				<Stack.Screen name="index" options={{ headerShown: false }} />
+				<Stack.Screen name="+not-found" />
+			</Stack>
 		</ThemeProvider>
 	);
 }
