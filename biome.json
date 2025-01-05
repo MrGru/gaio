@@ -1,0 +1,141 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": false
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "ignore": ["*.expo"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentWidth": 2,
+    "indentStyle": "space",
+    "lineEnding": "lf",
+    "lineWidth": 80
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noExtraBooleanCast": "warn",
+        "noMultipleSpacesInRegularExpressionLiterals": "warn",
+        "noUselessLoneBlockStatements": "warn",
+        "noVoid": "warn",
+        "noWith": "warn",
+        "useLiteralKeys": "warn"
+      },
+      "correctness": {
+        "noConstAssign": "error",
+        "noConstantCondition": "off",
+        "noEmptyCharacterClassInRegex": "warn",
+        "noGlobalObjectCalls": "warn",
+        "noInnerDeclarations": "off",
+        "noInvalidUseBeforeDeclaration": "off",
+        "noUndeclaredVariables": "error",
+        "noUnreachable": "error",
+        "noUnusedVariables": "warn",
+        "useExhaustiveDependencies": "error",
+        "useHookAtTopLevel": "error",
+        "useIsNan": "warn"
+      },
+      "security": { "noGlobalEval": "error" },
+      "style": {
+        "noCommaOperator": "warn",
+        "noImplicitBoolean": "off",
+        "useBlockStatements": "warn",
+        "useCollapsedElseIf": "off",
+        "useSingleVarDeclarator": "off"
+      },
+      "suspicious": {
+        "noCatchAssign": "warn",
+        "noCommentText": "error",
+        "noControlCharactersInRegex": "warn",
+        "noDebugger": "warn",
+        "noDoubleEquals": "warn",
+        "noDuplicateClassMembers": "error",
+        "noDuplicateJsxProps": "error",
+        "noDuplicateObjectKeys": "error",
+        "noEmptyBlockStatements": "off",
+        "noFallthroughSwitchClause": "warn",
+        "noFunctionAssign": "warn",
+        "noLabelVar": "warn",
+        "noRedeclare": "off",
+        "noSelfCompare": "warn",
+        "noShadowRestrictedNames": "warn",
+        "useValidTypeof": "warn"
+      }
+    },
+    "ignore": [
+      "**/main.js",
+      "**/staticBundle.js",
+      "docs/generatedComponentApiDocs.js",
+      "packages/react-native/flow/",
+      "packages/react-native/sdks/",
+      "packages/react-native/ReactAndroid/hermes-engine/build/",
+      "packages/react-native/Libraries/Renderer/*",
+      "packages/react-native/Libraries/vendor/**/*",
+      "**/node_modules/",
+      "packages/*/node_modules",
+      "packages/*/dist",
+      "packages/debugger-frontend/dist/**/*",
+      "packages/react-native-codegen/lib",
+      "tools/eslint/rules/sort-imports.js",
+      "**/Pods/*",
+      "**/*.macos.js",
+      "**/*.windows.js",
+      "**/coverage"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "arrowParentheses": "asNeeded",
+      "bracketSpacing": false,
+      "bracketSameLine": true,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    },
+    "globals": [
+      "clearImmediate",
+      "queueMicrotask",
+      "Blob",
+      "Set",
+      "Promise",
+      "requestIdleCallback",
+      "setImmediate",
+      "requestAnimationFrame",
+      "File",
+      "Map",
+      "__DEV__",
+      "WebSocket"
+    ]
+  },
+  "overrides": [
+    {
+      "include": [
+        "*.test.[jt]s?(x)",
+        "*.spec.[jt]s?(x)",
+        "__tests__/*",
+        "__mocks__/*"
+      ],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUndeclaredVariables": "off",
+            "noUnusedVariables": "off"
+          }
+        }
+      }
+    }
+  ]
+}

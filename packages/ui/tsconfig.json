@@ -4,9 +4,7 @@
     "jsx": "preserve",
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
