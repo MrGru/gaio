@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["*.expo"]
+    "ignore": ["*.expo", "./packages/ui/components/**/*"]
   },
   "formatter": {
     "enabled": true,
@@ -17,7 +17,7 @@
     "lineWidth": 80
   },
   "organizeImports": {
-    "enabled": true
+    "enabled": false
   },
   "linter": {
     "enabled": true,
