@@ -9,7 +9,8 @@
     "gapp:android": "bun run --filter gapp android",
     "gapp:web": "bun run --filter gapp web",
     "check": "biome check",
-    "ui:start": "bun run --filter ui start"
+    "ui:start": "bun run --filter ui start",
+    "test": "bun run --filter '*' test"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4"
