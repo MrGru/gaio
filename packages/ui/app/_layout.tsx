@@ -16,6 +16,8 @@ import {useColorScheme} from '@/lib/useColorScheme';
 import {PortalHost} from '@rn-primitives/portal';
 import {ThemeToggle} from '@/components/ThemeToggle';
 import {setAndroidNavigationBar} from '@/lib/android-navigation-bar';
+import {Toaster} from '@/components/custom/sonner';
+import UIProvider from '@/components/UIProvider';
 
 const LIGHT_THEME: Theme = {
   ...DefaultTheme,
@@ -35,43 +37,44 @@ export {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const {colorScheme, setColorScheme, isDarkColorScheme} = useColorScheme();
-  const [isColorSchemeLoaded, setIsColorSchemeLoaded] = React.useState(false);
+  // const {colorScheme, setColorScheme, isDarkColorScheme} = useColorScheme();
+  // const [isColorSchemeLoaded, setIsColorSchemeLoaded] = React.useState(false);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  React.useEffect(() => {
-    (async () => {
-      const theme = await AsyncStorage.getItem('theme');
-      if (Platform.OS === 'web') {
-        // Adds the background color to the html element to prevent white background on overscroll.
-        document.documentElement.classList.add('bg-background');
-      }
-      if (!theme) {
-        AsyncStorage.setItem('theme', colorScheme);
-        setIsColorSchemeLoaded(true);
-        return;
-      }
-      const colorTheme = theme === 'dark' ? 'dark' : 'light';
-      if (colorTheme !== colorScheme) {
-        setColorScheme(colorTheme);
-        setAndroidNavigationBar(colorTheme);
-        setIsColorSchemeLoaded(true);
-        return;
-      }
-      setAndroidNavigationBar(colorTheme);
-      setIsColorSchemeLoaded(true);
-    })().finally(() => {
-      SplashScreen.hideAsync();
-    });
-  }, []);
+  // // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  // React.useEffect(() => {
+  //   (async () => {
+  //     const theme = await AsyncStorage.getItem('theme');
+  //     if (Platform.OS === 'web') {
+  //       // Adds the background color to the html element to prevent white background on overscroll.
+  //       document.documentElement.classList.add('bg-background');
+  //     }
+  //     if (!theme) {
+  //       AsyncStorage.setItem('theme', colorScheme);
+  //       setIsColorSchemeLoaded(true);
+  //       return;
+  //     }
+  //     const colorTheme = theme === 'dark' ? 'dark' : 'light';
+  //     if (colorTheme !== colorScheme) {
+  //       setColorScheme(colorTheme);
+  //       setAndroidNavigationBar(colorTheme);
+  //       setIsColorSchemeLoaded(true);
+  //       return;
+  //     }
+  //     setAndroidNavigationBar(colorTheme);
+  //     setIsColorSchemeLoaded(true);
+  //   })().finally(() => {
+  //     SplashScreen.hideAsync();
+  //   });
+  // }, []);
 
-  if (!isColorSchemeLoaded) {
-    return null;
-  }
+  // if (!isColorSchemeLoaded) {
+  //   return null;
+  // }
 
   return (
-    <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-      <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
+    // <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
+    //   <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
+    <UIProvider>
       <Stack>
         <Stack.Screen
           name="index"
@@ -82,6 +85,8 @@ export default function RootLayout() {
         />
       </Stack>
       <PortalHost />
-    </ThemeProvider>
+      <Toaster />
+    </UIProvider>
+    // </ThemeProvider>
   );
 }
