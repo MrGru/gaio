@@ -4,7 +4,8 @@
     "jsx": "preserve",
     "strict": true,
     "paths": {
-      "@/*": ["./*"]
+      "@app/*": ["./*"],
+      "@ui/*": ["./../../packages/ui/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]

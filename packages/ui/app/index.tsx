@@ -5,8 +5,8 @@ import Animated, {
   FadeOutDown,
   LayoutAnimationConfig,
 } from 'react-native-reanimated';
-import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar';
-import {Button} from '@/components/ui/button';
+import {Avatar, AvatarFallback, AvatarImage} from '@ui/components/ui/avatar';
+import {Button} from '@ui/components/ui/button';
 import {
   Card,
   CardContent,
@@ -14,12 +14,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import {Progress} from '@/components/ui/progress';
-import {Text} from '@/components/ui/text';
-import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip';
-import {Info} from '@/lib/icons/Info';
-import {toast} from '@/components/custom/sonner';
+} from '@ui/components/ui/card';
+import {Progress} from '@ui/components/ui/progress';
+import {Text} from '@ui/components/ui/text';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@ui/components/ui/tooltip';
+import {Info} from '@ui/lib/icons/Info';
+import {toast} from '@ui/components/custom/sonner';
 
 const GITHUB_AVATAR_URI =
   'https://i.pinimg.com/originals/ef/a2/8d/efa28d18a04e7fa40ed49eeb0ab660db.jpg';

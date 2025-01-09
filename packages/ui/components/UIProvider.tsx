@@ -1,4 +1,4 @@
-import '@/global.css';
+import '@ui/global.css';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
@@ -10,11 +10,11 @@ import {
 import {StatusBar} from 'expo-status-bar';
 import * as React from 'react';
 import {Platform} from 'react-native';
-import {NAV_THEME} from '@/lib/constants';
-import {useColorScheme} from '@/lib/useColorScheme';
+import {NAV_THEME} from '@ui/lib/constants';
+import {useColorScheme} from '@ui/lib/useColorScheme';
 import {PortalHost} from '@rn-primitives/portal';
-import {setAndroidNavigationBar} from '@/lib/android-navigation-bar';
-import {Toaster} from '@/components/custom/sonner';
+import {setAndroidNavigationBar} from '@ui/lib/android-navigation-bar';
+import {Toaster} from '@ui/components/custom/sonner';
 
 const LIGHT_THEME: Theme = {
   ...DefaultTheme,
