@@ -5,7 +5,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import {StatusBar} from 'expo-status-bar';
 import {useEffect} from 'react';
 import 'react-native-reanimated';
-import UIProvider from 'ui/components/UIProvider';
+import UIProvider from '@gaio/ui/components/UIProvider';
 
 import {useColorScheme} from '@app/hooks/useColorScheme';
 
