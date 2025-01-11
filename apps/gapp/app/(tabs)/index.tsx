@@ -1,9 +1,10 @@
-import {Image, Platform, StyleSheet} from 'react-native';
+import {Image, Platform, StyleSheet, Text} from 'react-native';
 
 import {HelloWave} from '@app/components/HelloWave';
 import ParallaxScrollView from '@app/components/ParallaxScrollView';
 import {ThemedText} from '@app/components/ThemedText';
 import {ThemedView} from '@app/components/ThemedView';
+import {Label} from '@ui/components/ui/label';
 
 export default function HomeScreen() {
   return (
@@ -15,12 +16,18 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       }>
+      <Text className="color-blue-600">Duan 01</Text>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title" className="text-red-700 bg-blue-600">
+          Welcome!
+        </ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+        <ThemedText type="subtitle" className="text-sm text-blue-400">
+          Step 1: Try it
+        </ThemedText>
+        <Label className="color-red-700">Duan</Label>
         <ThemedText>
           Edit{' '}
           <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{' '}
@@ -49,8 +56,10 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText>{' '}
           to get a fresh <ThemedText type="defaultSemiBold">app</ThemedText>{' '}
           directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+          <ThemedText type="defaultSemiBold" className="bg-red-200">
+            app
+          </ThemedText>{' '}
+          to <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>

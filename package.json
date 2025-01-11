@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "workspaces": ["apps/*", "packages/*"],
   "scripts": {
-    "gapp:start": "bun run --filter gapp start",
+    "gapp:start": "bun run --filter gapp start -c",
     "gapp:ios": "bun run --filter gapp ios",
     "gapp:android": "bun run --filter gapp android",
     "gapp:web": "bun run --filter gapp web",
     "check": "biome check",
-    "ui:start": "bun run --filter @gaio/ui start",
+    "ui:start": "bun run --filter @gaio/ui start -c",
     "test": "bun run --filter '*' test"
   },
   "devDependencies": {
