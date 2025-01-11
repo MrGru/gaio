@@ -1,32 +1,13 @@
 import '@ui/global.css';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {
-  DarkTheme,
-  DefaultTheme,
-  type Theme,
-  ThemeProvider,
-} from '@react-navigation/native';
+import {DarkTheme, DefaultTheme, type Theme} from '@react-navigation/native';
 import {SplashScreen, Stack} from 'expo-router';
-import {StatusBar} from 'expo-status-bar';
 import * as React from 'react';
-import {Platform} from 'react-native';
 import {NAV_THEME} from '@ui/lib/constants';
-import {useColorScheme} from '@ui/lib/useColorScheme';
 import {PortalHost} from '@rn-primitives/portal';
 import {ThemeToggle} from '@ui/components/ThemeToggle';
-import {setAndroidNavigationBar} from '@ui/lib/android-navigation-bar';
 import {Toaster} from '@ui/components/custom/sonner';
 import UIProvider from '@ui/components/UIProvider';
-
-const LIGHT_THEME: Theme = {
-  ...DefaultTheme,
-  colors: NAV_THEME.light,
-};
-const DARK_THEME: Theme = {
-  ...DarkTheme,
-  colors: NAV_THEME.dark,
-};
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -72,8 +53,6 @@ export default function RootLayout() {
   // }
 
   return (
-    // <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-    //   <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
     <UIProvider>
       <Stack>
         <Stack.Screen
@@ -87,6 +66,5 @@ export default function RootLayout() {
       <PortalHost />
       <Toaster />
     </UIProvider>
-    // </ThemeProvider>
   );
 }

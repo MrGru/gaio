@@ -7,7 +7,11 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["*.expo", "./packages/ui/components/ui/**/*"]
+    "ignore": [
+      "*.expo",
+      "./packages/ui/components/ui/**/*",
+      "./packages/ui/lib/**/*"
+    ]
   },
   "formatter": {
     "enabled": true,
