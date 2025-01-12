@@ -10,20 +10,13 @@ import {
 import {StatusBar} from 'expo-status-bar';
 import * as React from 'react';
 import {Platform} from 'react-native';
-import {NAV_THEME} from '@ui/lib/constants';
+import {themes} from '@ui/lib/constants';
 import {useColorScheme} from '@ui/lib/useColorScheme';
 import {PortalHost} from '@rn-primitives/portal';
 import {setAndroidNavigationBar} from '@ui/lib/android-navigation-bar';
 import {Toaster} from '@ui/components/custom/sonner';
-
-const LIGHT_THEME: Theme = {
-  ...DefaultTheme,
-  colors: NAV_THEME.light,
-};
-const DARK_THEME: Theme = {
-  ...DarkTheme,
-  colors: NAV_THEME.dark,
-};
+import {SplashScreen} from 'expo-router';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -56,19 +49,48 @@ export default function UIProvider({children}: {children: React.ReactNode}) {
       }
       setAndroidNavigationBar(colorTheme);
       setIsColorSchemeLoaded(true);
-    })().finally(() => {});
+    })().finally(() => {
+      SplashScreen.hideAsync();
+    });
   }, []);
 
   if (!isColorSchemeLoaded) {
     return null;
   }
 
+  const color = 'Zinc';
+  const themeMode = isDarkColorScheme ? 'dark' : 'light';
+
+  const themeValue: Theme = isDarkColorScheme
+    ? {
+        ...DarkTheme,
+        colors: themes[color][themeMode],
+      }
+    : {
+        ...DefaultTheme,
+        colors: themes[color][themeMode],
+      };
+
+  if (Platform.OS === 'web') {
+    for (const key in themeValue.colors) {
+      const newKey = key.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+      console.log('key:', key);
+      document.documentElement.style.setProperty(
+        `--${newKey}`,
+        themeValue.colors[key],
+      );
+    }
+  }
+  console.log('themeColor: ', themeValue);
+
   return (
-    <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-      <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
-      {children}
-      <PortalHost />
-      <Toaster />
-    </ThemeProvider>
+    <GestureHandlerRootView>
+      <ThemeProvider value={themeValue}>
+        <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
+        {children}
+        <PortalHost />
+        <Toaster />
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }

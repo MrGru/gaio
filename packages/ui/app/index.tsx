@@ -89,7 +89,7 @@ export default function Screen() {
                 entering={FadeInUp}
                 exiting={FadeOutDown}
                 className="items-center w-11">
-                <Text className="text-sm font-bold text-sky-600">
+                <Text className="text-sm font-bold text-secondary-foreground">
                   {progress}%
                 </Text>
               </Animated.View>
@@ -98,7 +98,7 @@ export default function Screen() {
           <Progress
             value={progress}
             className="h-2"
-            indicatorClassName="bg-sky-600"
+            indicatorClassName="bg-secondary-foreground"
           />
           <View />
           <Button
@@ -111,6 +111,7 @@ export default function Screen() {
       </Card>
 
       <Button
+        variant="default"
         onPress={() => {
           toast('hello toaster');
         }}>

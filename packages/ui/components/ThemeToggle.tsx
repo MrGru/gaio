@@ -8,9 +8,11 @@ import {cn} from '@ui/lib/utils';
 
 export function ThemeToggle() {
   const {isDarkColorScheme, setColorScheme} = useColorScheme();
+  console.log('click items: ', isDarkColorScheme);
   return (
     <Pressable
       onPress={() => {
+        console.log('Click here => ', isDarkColorScheme);
         const newTheme = isDarkColorScheme ? 'light' : 'dark';
         setColorScheme(newTheme);
         setAndroidNavigationBar(newTheme);

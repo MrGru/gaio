@@ -24,6 +24,8 @@ export default function RootLayout() {
     return null;
   }
 
+  console.log(process.env.EXPO_PUBLIC_API_KEY);
+
   return (
     <UIProvider>
       <Stack>

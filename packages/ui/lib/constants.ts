@@ -1,54 +1,248 @@
-export const NAV_THEME = {
-  light: {
-    background: 'hsl(58 60% 99%)', // background
-    border: 'hsl(58 15% 90%)', // border
-    card: 'hsl(58 60% 99%)', // card
-    notification: 'hsl(11 98% 34%)', // destructive
-    primary: 'hsl(58 2% 31%)', // primary
-    text: 'hsl(58 58% 0%)', // foreground
-    muted: 'hsl(28 27% 95%)', // muted
-    mutedForeground: 'hsl(28 0% 38%)', // muted-foreground
-    popover: 'hsl(58 60% 99%)', // popover
-    popoverForeground: 'hsl(58 58% 0%)', // popover-foreground
-    input: 'hsl(58 15% 90%)', // input
-    primaryForeground: 'hsl(58 2% 91%)', // primary-foreground
-    secondary: 'hsl(28 2% 31%)', // secondary
-    secondaryForeground: 'hsl(28 2% 91%)', // secondary-foreground
-    accent: 'hsl(88 2% 31%)', // accent
-    accentForeground: 'hsl(88 2% 91%)', // accent-foreground
-    destructiveForeground: 'hsl(0 0% 100%)', // destructive-foreground
-    ring: 'hsl(58 2% 31%)', // ring
-    chart1: 'hsl(58 2% 31%)', // chart-1
-    chart2: 'hsl(28 2% 31%)', // chart-2
-    chart3: 'hsl(88 2% 31%)', // chart-3
-    chart4: 'hsl(28 2% 34%)', // chart-4
-    chart5: 'hsl(58 5% 31%)', // chart-5
-    radius: '0.5rem', // radius
+// Note: notification using destructive color and text use foreground color
+export const themes = {
+  Orange: {
+    light: {
+      background: "0 0% 100%",
+      foreground: "20 14.3% 4.1%",
+      card: "0 0% 100%",
+      cardForeground: "20 14.3% 4.1%",
+      popover: "0 0% 100%",
+      popoverForeground: "20 14.3% 4.1%",
+      primary: "24.6 95% 53.1%",
+      primaryForeground: "60 9.1% 97.8%",
+      secondary: "60 4.8% 95.9%",
+      secondaryForeground: "24 9.8% 10%",
+      muted: "60 4.8% 95.9%",
+      mutedForeground: "25 5.3% 44.7%",
+      accent: "60 4.8% 95.9%",
+      accentForeground: "24 9.8% 10%",
+      destructive: "0 84.2% 60.2%",
+      destructiveForeground: "60 9.1% 97.8%",
+      border: "20 5.9% 90%",
+      input: "20 5.9% 90%",
+      ring: "24.6 95% 53.1%",
+      radius: "0.5rem",
+      notification: "0 84.2% 60.2%",  
+      text:  "20 14.3% 4.1%"
+    },
+    dark: {
+      background: "20 14.3% 4.1%",
+      foreground: "60 9.1% 97.8%",
+      card: "20 14.3% 4.1%",
+      cardForeground: "60 9.1% 97.8%",
+      popover: "20 14.3% 4.1%",
+      popoverForeground: "60 9.1% 97.8%",
+      primary: "20.5 90.2% 48.2%",
+      primaryForeground: "60 9.1% 97.8%",
+      secondary: "12 6.5% 15.1%",
+      secondaryForeground: "60 9.1% 97.8%",
+      muted: "12 6.5% 15.1%",
+      mutedForeground: "24 5.4% 63.9%",
+      accent: "12 6.5% 15.1%",
+      accentForeground: "60 9.1% 97.8%",
+      destructive: "0 72.2% 50.6%",
+      destructiveForeground: "60 9.1% 97.8%",
+      border: "12 6.5% 15.1%",
+      input: "12 6.5% 15.1%",
+      ring: "20.5 90.2% 48.2%",
+      notification: "0 72.2% 50.6%", 
+      text:  "60 9.1% 97.8%", 
+    },
   },
-  dark: {
-    background: 'hsl(58 48% 2%)', // background
-    border: 'hsl(58 15% 11%)', // border
-    card: 'hsl(58 48% 2%)', // card
-    notification: 'hsl(11 98% 54%)', // destructive
-    primary: 'hsl(58 2% 31%)', // primary
-    text: 'hsl(58 35% 100%)', // foreground
-    muted: 'hsl(28 27% 5%)', // muted
-    mutedForeground: 'hsl(28 0% 62%)', // muted-foreground
-    popover: 'hsl(58 48% 2%)', // popover
-    popoverForeground: 'hsl(58 35% 100%)', // popover-foreground
-    input: 'hsl(58 15% 11%)', // input
-    primaryForeground: 'hsl(58 2% 91%)', // primary-foreground
-    secondary: 'hsl(28 2% 31%)', // secondary
-    secondaryForeground: 'hsl(28 2% 91%)', // secondary-foreground
-    accent: 'hsl(88 2% 31%)', // accent
-    accentForeground: 'hsl(88 2% 91%)', // accent-foreground
-    destructiveForeground: 'hsl(0 0% 100%)', // destructive-foreground
-    ring: 'hsl(58 2% 31%)', // ring
-    chart1: 'hsl(58 2% 31%)', // chart-1
-    chart2: 'hsl(28 2% 31%)', // chart-2
-    chart3: 'hsl(88 2% 31%)', // chart-3
-    chart4: 'hsl(28 2% 34%)', // chart-4
-    chart5: 'hsl(58 5% 31%)', // chart-5
-    radius: '0.5rem', // radius
+  Blue: {
+    light: {
+      background: "0 0% 100%",
+      foreground: "222.2 84% 4.9%",
+      card: "0 0% 100%",
+      cardForeground: "222.2 84% 4.9%",
+      popover: "0 0% 100%",
+      popoverForeground: "222.2 84% 4.9%",
+      primary: "221.2 83.2% 53.3%",
+      primaryForeground: "210 40% 98%",
+      secondary: "210 40% 96.1%",
+      secondaryForeground: "222.2 47.4% 11.2%",
+      muted: "210 40% 96.1%",
+      mutedForeground: "215.4 16.3% 46.9%",
+      accent: "210 40% 96.1%",
+      accentForeground: "222.2 47.4% 11.2%",
+      destructive: "0 84.2% 60.2%",
+      destructiveForeground: "210 40% 98%",
+      border: "214.3 31.8% 91.4%",
+      input: "214.3 31.8% 91.4%",
+      ring: "221.2 83.2% 53.3%",
+      radius: "0.5rem",
+      notification: "0 84.2% 60.2%", 
+      text:  "222.2 84% 4.9%" 
+    },
+    dark: {
+      background: "222.2 84% 4.9%",
+      foreground: "210 40% 98%",
+      card: "222.2 84% 4.9%",
+      cardForeground: "210 40% 98%",
+      popover: "222.2 84% 4.9%",
+      popoverForeground: "210 40% 98%",
+      primary: "217.2 91.2% 59.8%",
+      primaryForeground: "222.2 47.4% 11.2%",
+      secondary: "217.2 32.6% 17.5%",
+      secondaryForeground: "210 40% 98%",
+      muted: "217.2 32.6% 17.5%",
+      mutedForeground: "215 20.2% 65.1%",
+      accent: "217.2 32.6% 17.5%",
+      accentForeground: "210 40% 98%",
+      destructive: "0 62.8% 30.6%",
+      destructiveForeground: "210 40% 98%",
+      border: "217.2 32.6% 17.5%",
+      input: "217.2 32.6% 17.5%",
+      ring: "224.3 76.3% 48%",
+      notification: "0 62.8% 30.6%", 
+      text:  "210 40% 98%" 
+    },
+  },
+  Green: {
+    light: {
+      background: "0 0% 100%",
+      foreground: "141 40% 10%",
+      card: "0 0% 100%",
+      cardForeground: "141 40% 10%",
+      popover: "0 0% 100%",
+      popoverForeground: "141 40% 10%",
+      primary: "140 70% 40%",
+      primaryForeground: "140 90% 98%",
+      secondary: "140 50% 90%",
+      secondaryForeground: "140 40% 20%",
+      muted: "140 50% 90%",
+      mutedForeground: "140 40% 30%",
+      accent: "140 50% 90%",
+      accentForeground: "140 40% 20%",
+      destructive: "0 84.2% 60.2%",
+      destructiveForeground: "140 90% 98%",
+      border: "140 20% 80%",
+      input: "140 20% 80%",
+      ring: "140 70% 40%",
+      radius: "0.5rem",
+      notification: "0 84.2% 60.2%", 
+      text: "141 40% 10%" 
+    },
+    dark: {
+      background: "141 40% 10%",
+      foreground: "140 90% 98%",
+      card: "141 40% 10%",
+      cardForeground: "140 90% 98%",
+      popover: "141 40% 10%",
+      popoverForeground: "140 90% 98%",
+      primary: "140 60% 35%",
+      primaryForeground: "140 90% 98%",
+      secondary: "140 20% 20%",
+      secondaryForeground: "140 90% 98%",
+      muted: "140 20% 20%",
+      mutedForeground: "140 40% 60%",
+      accent: "140 20% 20%",
+      accentForeground: "140 90% 98%",
+      destructive: "0 62.8% 30.6%",
+      destructiveForeground: "140 90% 98%",
+      border: "140 20% 20%",
+      input: "140 20% 20%",
+      ring: "140 70% 40%",
+      notification: "0 62.8% 30.6%", 
+      text: "140 90% 98%" 
+    },
+  },
+  Rose: {
+    light: {
+      background: "0 0% 100%",
+      foreground: "340 40% 15%",
+      card: "0 0% 100%",
+      cardForeground: "340 40% 15%",
+      popover: "0 0% 100%",
+      popoverForeground: "340 40% 15%",
+      primary: "340 80% 60%",
+      primaryForeground: "340 100% 98%",
+      secondary: "340 50% 90%",
+      secondaryForeground: "340 40% 25%",
+      muted: "340 50% 90%",
+      mutedForeground: "340 40% 35%",
+      accent: "340 50% 90%",
+      accentForeground: "340 40% 25%",
+      destructive: "0 84.2% 60.2%",
+      destructiveForeground: "340 100% 98%",
+      border: "340 20% 80%",
+      input: "340 20% 80%",
+      ring: "340 80% 60%",
+      radius: "0.5rem",
+      notification: "0 84.2% 60.2%", 
+      text: "340 40% 15%" 
+    },
+    dark: {
+      background: "340 40% 15%",
+      foreground: "340 100% 98%",
+      card: "340 40% 15%",
+      cardForeground: "340 100% 98%",
+      popover: "340 40% 15%",
+      popoverForeground: "340 100% 98%",
+      primary: "340 70% 50%",
+      primaryForeground: "340 100% 98%",
+      secondary: "340 20% 20%",
+      secondaryForeground: "340 100% 98%",
+      muted: "340 20% 20%",
+      mutedForeground: "340 40% 65%",
+      accent: "340 20% 20%",
+      accentForeground: "340 100% 98%",
+      destructive: "0 62.8% 30.6%",
+      destructiveForeground: "340 100% 98%",
+      border: "340 20% 20%",
+      input: "340 20% 20%",
+      ring: "340 80% 60%",
+      notification: "0 62.8% 30.6%", 
+      text: "340 100% 98%" 
+    },
+  },
+  Zinc: {
+    light: {
+      background: "0 0% 100%",
+      foreground: "220 15% 20%",
+      card: "0 0% 100%",
+      cardForeground: "220 15% 20%",
+      popover: "0 0% 100%",
+      popoverForeground: "220 15% 20%",
+      primary: "220 30% 40%",
+      primaryForeground: "220 90% 98%",
+      secondary: "220 10% 90%",
+      secondaryForeground: "220 15% 25%",
+      muted: "220 10% 90%",
+      mutedForeground: "220 15% 35%",
+      accent: "220 10% 90%",
+      accentForeground: "220 15% 25%",
+      destructive: "0 84.2% 60.2%",
+      destructiveForeground: "220 90% 98%",
+      border: "220 5% 80%",
+      input: "220 5% 80%",
+      ring: "220 30% 40%",
+      radius: "0.5rem",
+      notification: "0 84.2% 60.2%", 
+      text: "220 15% 20%" 
+    },
+    dark: {
+      background: "220 15% 20%",
+      foreground: "220 90% 98%",
+      card: "220 15% 20%",
+      cardForeground: "220 90% 98%",
+      popover: "220 15% 20%",
+      popoverForeground: "220 90% 98%",
+      primary: "220 20% 35%",
+      primaryForeground: "220 90% 98%",
+      secondary: "220 10% 25%",
+      secondaryForeground: "220 90% 98%",
+      muted: "220 10% 25%",
+      mutedForeground: "220 15% 60%",
+      accent: "220 10% 25%",
+      accentForeground: "220 90% 98%",
+      destructive: "0 62.8% 30.6%",
+      destructiveForeground: "220 90% 98%",
+      border: "220 10% 25%",
+      input: "220 10% 25%",
+      ring: "220 30% 40%",
+      notification: "0 62.8% 30.6%", 
+      text: "220 90% 98%" 
+    },
   },
 };
