@@ -63,6 +63,7 @@
   },
   "private": true,
   "dependencies": {
+    "@lexical/react": "^0.23.1",
     "@rn-primitives/accordion": "^1.1.0",
     "@rn-primitives/alert-dialog": "^1.1.0",
     "@rn-primitives/aspect-ratio": "^1.1.0",
@@ -91,6 +92,7 @@
     "@rn-primitives/types": "^1.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lexical": "^0.23.1",
     "lucide-react-native": "^0.469.0",
     "react-native-svg": "15.8.0",
     "sonner": "^1.7.1",
