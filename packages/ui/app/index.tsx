@@ -25,12 +25,17 @@ import {
 import {Info} from '@ui/lib/icons/Info';
 import {toast} from '@ui/components/custom/sonner';
 import Editor from '@ui/components/custom/RichTextEditor/richtext';
+import {useState} from 'react';
 
 const GITHUB_AVATAR_URI =
   'https://i.pinimg.com/originals/ef/a2/8d/efa28d18a04e7fa40ed49eeb0ab660db.jpg';
 
 export default function Screen() {
-  const [progress, setProgress] = React.useState(78);
+  const [progress, setProgress] = useState(78);
+
+  const [editorState, setEditorState] = useState<string | null>(null);
+  const [plainText, setPlainText] = useState('');
+  const wordCount = editorState?.split(' ').length ?? 0;
 
   function updateProgressValue() {
     setProgress(Math.floor(Math.random() * 100));
@@ -113,7 +118,10 @@ export default function Screen() {
             </Button>
           </CardFooter>
         </Card>
-        <Editor />
+        <Text style={{fontSize: 16, marginVertical: 10}}>{plainText}</Text>
+        <Text style={{fontSize: 16}}>Words: {wordCount}</Text>
+        <Text style={{fontSize: 16}}>EditorState: {editorState}</Text>
+        <Editor setPlainText={setPlainText} setEditorState={setEditorState} />
 
         <Button
           variant="default"

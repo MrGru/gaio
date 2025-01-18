@@ -1,5 +1,15 @@
+import { Dispatch, SetStateAction } from "react";
+
 // Note: notification using destructive color and text use foreground color
-export const themes = {
+type ThemeColors = 'Zinc' | 'Orange' | 'Blue' | 'Green' | 'Rose';
+type ThemeMode = "light" | "dark";
+
+interface ThemeColorStateParams {
+  themeColor: ThemeColors;
+  setThemeColor: Dispatch<SetStateAction<ThemeColors>>;
+}
+
+export const themes: Record<ThemeColors, Record<'dark'| 'light', any>> = {
   Orange: {
     light: {
       background: "0 0% 100%",
@@ -246,3 +256,15 @@ export const themes = {
     },
   },
 };
+
+export const setGlobalColorTheme = (themeMode: ThemeMode, color: ThemeColors) =>  {
+  const theme = themes[color][themeMode] as {[key: string]: string};
+  for (const key in theme) {
+    // convert camelCase to hyphen for web elements
+    const newKey = key.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+    document.documentElement.style.setProperty(
+      `--${newKey}`,
+      theme[key],
+    );
+  }
+}

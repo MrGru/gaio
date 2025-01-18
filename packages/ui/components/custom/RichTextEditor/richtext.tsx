@@ -1,12 +1,18 @@
+'use dom';
+
 import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
 import {LexicalComposer} from '@lexical/react/LexicalComposer';
 import {ContentEditable} from '@lexical/react/LexicalContentEditable';
 import {LexicalErrorBoundary} from '@lexical/react/LexicalErrorBoundary';
 import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
 import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
+import {OnChangePlugin} from '@lexical/react/LexicalOnChangePlugin';
+import {$convertToMarkdownString, TRANSFORMERS} from '@lexical/markdown';
+import {MarkdownShortcutPlugin} from '@lexical/react/LexicalMarkdownShortcutPlugin';
 import './style.css';
 import {
   $isTextNode,
+  $getRoot,
   type DOMConversionMap,
   type DOMExportOutput,
   type DOMExportOutputMap,
@@ -17,11 +23,17 @@ import {
   ParagraphNode,
   TextNode,
 } from 'lexical';
+import {AutoLinkNode, LinkNode} from '@lexical/link';
+import {ListNode, ListItemNode} from '@lexical/list';
+import {TableNode, TableCellNode, TableRowNode} from '@lexical/table';
+import {CodeNode} from '@lexical/code';
+import {HeadingNode, QuoteNode} from '@lexical/rich-text';
+import {HorizontalRuleNode} from '@lexical/react/LexicalHorizontalRuleNode';
 
 import Theme from './richtext-theme';
 import ToolbarPlugin from './plugins/ToolbarPlugin';
-// import TreeViewPlugin from './plugins/TreeViewPlugin';
 import {parseAllowedColor, parseAllowedFontSize} from './styleConfig';
+import type {Dispatch, SetStateAction} from 'react';
 
 const placeholder = 'Enter some rich text...';
 
@@ -126,15 +138,38 @@ const editorConfig = {
     export: exportMap,
     import: constructImportMap(),
   },
-  namespace: 'React.js Demo',
-  nodes: [ParagraphNode, TextNode],
+  namespace: 'useDom demo',
+  nodes: [
+    ParagraphNode,
+    TextNode,
+    LinkNode,
+    AutoLinkNode,
+    ListNode,
+    ListItemNode,
+    TableNode,
+    TableCellNode,
+    TableRowNode,
+    HorizontalRuleNode,
+    CodeNode,
+    HeadingNode,
+    LinkNode,
+    ListNode,
+    ListItemNode,
+    QuoteNode,
+  ],
   onError(error: Error) {
     throw error;
   },
   theme: Theme,
 };
 
-export default function Editor() {
+export default function Editor({
+  setPlainText,
+  setEditorState,
+}: {
+  setPlainText: Dispatch<SetStateAction<string>>;
+  setEditorState: Dispatch<SetStateAction<string | null>>;
+}) {
   return (
     <LexicalComposer initialConfig={editorConfig}>
       <div className="editor-container">
@@ -152,8 +187,23 @@ export default function Editor() {
             }
             ErrorBoundary={LexicalErrorBoundary}
           />
+          <OnChangePlugin
+            onChange={(editorState, editor, tags) => {
+              editorState.read(() => {
+                const root = $getRoot();
+                const textContent = root.getTextContent();
+                setPlainText(textContent);
+                const markdown = $convertToMarkdownString(TRANSFORMERS);
+                console.log(markdown);
+              });
+              setEditorState(JSON.stringify(editorState.toJSON()));
+            }}
+            ignoreHistoryMergeTagChange
+            ignoreSelectionChange
+          />
           <HistoryPlugin />
           <AutoFocusPlugin />
+          <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
           {/* <TreeViewPlugin /> */}
         </div>
       </div>

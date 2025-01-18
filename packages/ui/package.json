@@ -63,6 +63,7 @@
   },
   "private": true,
   "dependencies": {
+    "@lexical/markdown": "^0.23.1",
     "@lexical/react": "^0.23.1",
     "@rn-primitives/accordion": "^1.1.0",
     "@rn-primitives/alert-dialog": "^1.1.0",
