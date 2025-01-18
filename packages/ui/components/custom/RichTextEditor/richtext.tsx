@@ -1,4 +1,5 @@
 'use dom';
+import './style.css';
 
 import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
 import {LexicalComposer} from '@lexical/react/LexicalComposer';
@@ -9,7 +10,6 @@ import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
 import {OnChangePlugin} from '@lexical/react/LexicalOnChangePlugin';
 import {$convertToMarkdownString, TRANSFORMERS} from '@lexical/markdown';
 import {MarkdownShortcutPlugin} from '@lexical/react/LexicalMarkdownShortcutPlugin';
-import './style.css';
 import {
   $isTextNode,
   $getRoot,

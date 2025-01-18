@@ -121,8 +121,9 @@ export default function Screen() {
         <Text style={{fontSize: 16, marginVertical: 10}}>{plainText}</Text>
         <Text style={{fontSize: 16}}>Words: {wordCount}</Text>
         <Text style={{fontSize: 16}}>EditorState: {editorState}</Text>
-        <Editor setPlainText={setPlainText} setEditorState={setEditorState} />
-
+        <View className="w-full h-80">
+          <Editor setPlainText={setPlainText} setEditorState={setEditorState} />
+        </View>
         <Button
           variant="default"
           onPress={() => {
