@@ -6,6 +6,16 @@ import {PortalHost} from '@rn-primitives/portal';
 import {ThemeToggle} from '@ui/components/ThemeToggle';
 import {Toaster} from '@ui/components/custom/sonner';
 import UIProvider from '@ui/components/UIProvider';
+import {verifyInstallation} from 'nativewind';
+
+// Fix change theme slow, because of appstate checking on mobile
+import {Appearance} from 'react-native';
+import {systemColorScheme} from 'react-native-css-interop/dist/runtime/native/appearance-observables';
+
+// FIXME: https://github.com/nativewind/nativewind/issues/1332
+Appearance.addChangeListener(({colorScheme}) =>
+  systemColorScheme.set(colorScheme ?? 'light'),
+);
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -16,6 +26,8 @@ export {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  verifyInstallation();
+
   return (
     <UIProvider>
       <Stack>
@@ -23,6 +35,7 @@ export default function RootLayout() {
           name="index"
           options={{
             title: 'Starter Base',
+            // headerShown: false,
             headerRight: () => <ThemeToggle />,
           }}
         />
