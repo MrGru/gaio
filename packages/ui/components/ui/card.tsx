@@ -1,8 +1,8 @@
 import type { TextRef, ViewRef } from '@rn-primitives/types';
 import * as React from 'react';
 import { Text, type TextProps, View, type ViewProps } from 'react-native';
-import { cn } from '@ui/lib/utils';
-import { TextClassContext } from '@ui/components/ui/text';
+import { cn } from '@gaio/ui/lib/utils';
+import { TextClassContext } from '@gaio/ui/components/ui/text';
 
 const Card = React.forwardRef<ViewRef, ViewProps>(({ className, ...props }, ref) => (
   <View

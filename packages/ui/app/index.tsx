@@ -5,8 +5,12 @@ import Animated, {
   FadeOutDown,
   LayoutAnimationConfig,
 } from 'react-native-reanimated';
-import {Avatar, AvatarFallback, AvatarImage} from '@ui/components/ui/avatar';
-import {Button} from '@ui/components/ui/button';
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@gaio/ui/components/ui/avatar';
+import {Button} from '@gaio/ui/components/ui/button';
 import {
   Card,
   CardContent,
@@ -14,17 +18,17 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@ui/components/ui/card';
-import {Progress} from '@ui/components/ui/progress';
-import {Text} from '@ui/components/ui/text';
+} from '@gaio/ui/components/ui/card';
+import {Progress} from '@gaio/ui/components/ui/progress';
+import {Text} from '@gaio/ui/components/ui/text';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from '@ui/components/ui/tooltip';
-import {Info} from '@ui/lib/icons/Info';
-import {toast} from '@ui/components/custom/sonner';
-import Editor from '@ui/components/custom/RichTextEditor/richtext';
+} from '@gaio/ui/components/ui/tooltip';
+import {Info} from '@gaio/ui/lib/icons/Info';
+import {toast} from '@gaio/ui/components/custom/sonner';
+import Editor from '@gaio/ui/components/custom/RichTextEditor/richtext';
 import {useState} from 'react';
 
 const GITHUB_AVATAR_URI =

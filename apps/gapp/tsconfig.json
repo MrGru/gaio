@@ -5,7 +5,7 @@
     "strict": true,
     "paths": {
       "@app/*": ["./*"],
-      "@ui/*": ["./../../packages/ui/*"],
+      "@gaio/ui/*": ["./../../packages/ui/*"],
       "react-native": [
         "../../node_modules/react-native",
         "../../node_modules/nativewind"

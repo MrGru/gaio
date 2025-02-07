@@ -6,7 +6,7 @@ import Animated, {
   withSequence,
   withTiming,
 } from 'react-native-reanimated';
-import { cn } from '@ui/lib/utils';
+import { cn } from '@gaio/ui/lib/utils';
 
 const duration = 1000;
 

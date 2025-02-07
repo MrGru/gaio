@@ -1,7 +1,7 @@
 import * as TablePrimitive from '@rn-primitives/table';
 import * as React from 'react';
-import { cn } from '@ui/lib/utils';
-import { TextClassContext } from '@ui/components/ui/text';
+import { cn } from '@gaio/ui/lib/utils';
+import { TextClassContext } from '@gaio/ui/components/ui/text';
 
 const Table = React.forwardRef<TablePrimitive.RootRef, TablePrimitive.RootProps>(
   ({ className, ...props }, ref) => (

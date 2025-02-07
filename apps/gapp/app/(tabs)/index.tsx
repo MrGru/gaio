@@ -1,86 +1,16 @@
-import {Image, Platform, StyleSheet, Text} from 'react-native';
+import {View, Text} from 'react-native';
 
-import {HelloWave} from '@app/components/HelloWave';
-import ParallaxScrollView from '@app/components/ParallaxScrollView';
-import {ThemedText} from '@app/components/ThemedText';
-import {ThemedView} from '@app/components/ThemedView';
-import {Label} from '@ui/components/ui/label';
+import {Label} from '@gaio/ui/components/ui/label';
+import {Button} from '@gaio/ui/components/ui/button';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{light: '#A1CEDC', dark: '#1D3D47'}}
-      headerImage={
-        <Image
-          source={require('@app/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <Text className="color-text">Duan 01</Text>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title" className="text-red-700 bg-blue-600">
-          Welcome!
-        </ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle" className="text-sm text-blue-400">
-          Step 1: Try it
-        </ThemedText>
-        <Label className="color-primary">Duan</Label>
-        <ThemedText>
-          Edit{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{' '}
-          to see changes. Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this
-          starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText>{' '}
-          to get a fresh <ThemedText type="defaultSemiBold">app</ThemedText>{' '}
-          directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold" className="bg-red-200">
-            app
-          </ThemedText>{' '}
-          to <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <View className="bg-accent">
+      <Text className="text-red-200">Duan 01</Text>
+      <Label className="text-accent">Duan</Label>
+      <Button variant="outline">
+        <Label>Duan 02</Label>
+      </Button>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});

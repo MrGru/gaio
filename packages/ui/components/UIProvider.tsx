@@ -1,4 +1,4 @@
-import '@ui/global.css';
+import '@gaio/ui/global.css';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
@@ -10,13 +10,13 @@ import {
 import {StatusBar} from 'expo-status-bar';
 import * as React from 'react';
 import {Platform} from 'react-native';
-import {useColorScheme} from '@ui/lib/useColorScheme';
+import {useColorScheme} from '@gaio/ui/lib/useColorScheme';
 import {PortalHost} from '@rn-primitives/portal';
-import {setAndroidNavigationBar} from '@ui/lib/android-navigation-bar';
-import {Toaster} from '@ui/components/custom/sonner';
+import {setAndroidNavigationBar} from '@gaio/ui/lib/android-navigation-bar';
+import {Toaster} from '@gaio/ui/components/custom/sonner';
 import {SplashScreen} from 'expo-router';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {setGlobalColorTheme, themes} from '@ui/lib/constants';
+import {setGlobalColorTheme, themes} from '@gaio/ui/lib/constants';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -58,7 +58,7 @@ export default function UIProvider({children}: {children: React.ReactNode}) {
     return null;
   }
 
-  const color = 'Zinc';
+  const color = 'Rose';
   const themeMode = isDarkColorScheme ? 'dark' : 'light';
 
   const themeValue: Theme = isDarkColorScheme
@@ -85,13 +85,13 @@ export default function UIProvider({children}: {children: React.ReactNode}) {
   console.log('themeColor: ', themeValue);
 
   return (
-    <GestureHandlerRootView>
-      <ThemeProvider value={themeValue}>
+    <ThemeProvider value={themeValue}>
+      <GestureHandlerRootView className="flex-1">
         <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
         {children}
         <PortalHost />
         <Toaster />
-      </ThemeProvider>
-    </GestureHandlerRootView>
+      </GestureHandlerRootView>
+    </ThemeProvider>
   );
 }

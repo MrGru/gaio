@@ -1,11 +1,11 @@
-import '@ui/global.css';
+import '@gaio/ui/global.css';
 
 import {SplashScreen, Stack} from 'expo-router';
 import * as React from 'react';
 import {PortalHost} from '@rn-primitives/portal';
-import {ThemeToggle} from '@ui/components/ThemeToggle';
-import {Toaster} from '@ui/components/custom/sonner';
-import UIProvider from '@ui/components/UIProvider';
+import {ThemeToggle} from '@gaio/ui/components/ThemeToggle';
+import {Toaster} from '@gaio/ui/components/custom/sonner';
+import UIProvider from '@gaio/ui/components/UIProvider';
 import {verifyInstallation} from 'nativewind';
 
 // Fix change theme slow, because of appstate checking on mobile

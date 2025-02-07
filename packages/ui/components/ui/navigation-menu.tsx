@@ -11,8 +11,8 @@ import Animated, {
   useDerivedValue,
   withTiming,
 } from 'react-native-reanimated';
-import { ChevronDown } from '@ui/lib/icons/ChevronDown';
-import { cn } from '@ui/lib/utils';
+import { ChevronDown } from '@gaio/ui/lib/icons/ChevronDown';
+import { cn } from '@gaio/ui/lib/utils';
 
 const NavigationMenu = React.forwardRef<
   NavigationMenuPrimitive.RootRef,

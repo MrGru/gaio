@@ -1,6 +1,6 @@
 import * as SeparatorPrimitive from '@rn-primitives/separator';
 import * as React from 'react';
-import { cn } from '@ui/lib/utils';
+import { cn } from '@gaio/ui/lib/utils';
 
 const Separator = React.forwardRef<SeparatorPrimitive.RootRef, SeparatorPrimitive.RootProps>(
   ({ className, orientation = 'horizontal', decorative = true, ...props }, ref) => (
