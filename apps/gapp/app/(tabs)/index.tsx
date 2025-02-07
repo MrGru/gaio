@@ -16,7 +16,7 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       }>
-      <Text className="color-blue-600">Duan 01</Text>
+      <Text className="color-text">Duan 01</Text>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title" className="text-red-700 bg-blue-600">
           Welcome!
@@ -27,7 +27,7 @@ export default function HomeScreen() {
         <ThemedText type="subtitle" className="text-sm text-blue-400">
           Step 1: Try it
         </ThemedText>
-        <Label className="color-red-700">Duan</Label>
+        <Label className="color-primary">Duan</Label>
         <ThemedText>
           Edit{' '}
           <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{' '}

@@ -5,7 +5,6 @@ import {Platform} from 'react-native';
 import {HapticTab} from '@app/components/HapticTab';
 import {IconSymbol} from '@app/components/ui/IconSymbol';
 import TabBarBackground from '@app/components/ui/TabBarBackground';
-import {Colors} from '@app/constants/Colors';
 import {useColorScheme} from '@app/hooks/useColorScheme';
 
 export default function TabLayout() {
@@ -14,7 +13,6 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
@@ -30,9 +28,9 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({color}) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
-          ),
+          tabBarIcon: ({color}) => {
+            return <IconSymbol size={28} name="house.fill" color={color} />;
+          },
         }}
       />
       <Tabs.Screen
